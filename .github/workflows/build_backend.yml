@@ -30,4 +30,5 @@ jobs:
           args: >
             -Dsonar.organization=roland-hufnagel
             -Dsonar.projectKey=roland-hufnagel_pufferfish-sonar-session_backend
-            -Dsonar.sources=backend
+            -Dsonar.sources=./backend/src
+            -Dsonar.coverage.exclusions=./frontend/**
