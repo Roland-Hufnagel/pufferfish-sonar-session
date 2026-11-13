@@ -31,4 +31,4 @@ jobs:
             -Dsonar.organization=roland-hufnagel
             -Dsonar.projectKey=roland-hufnagel_pufferfish-sonar-session_frontend
             -Dsonar.sources=./frontend/src
-            -Dsonar.coverage.exclusions: **/*
+            -Dsonar.coverage.exclusions=**/*
