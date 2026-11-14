@@ -15,7 +15,7 @@ public class Hello {
         return "two";
     }
 
-    @DeleteMapping("/:id")
+    @DeleteMapping("/{id}")
     public String delete(@PathVariable String id) {
         return "delete";
     }
