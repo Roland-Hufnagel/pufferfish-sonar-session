@@ -27,8 +27,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
+          projectBaseDir: frontend
           args: >
             -Dsonar.organization=roland-hufnagel
             -Dsonar.projectKey=roland-hufnagel_pufferfish-sonar-session_frontend
-            -Dsonar.sources=./frontend/src
             -Dsonar.coverage.exclusions=**/*
