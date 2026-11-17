@@ -5,18 +5,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/hello")
 public class Hello {
+    public record HelloResponse(String message) {
+    }
+
     @GetMapping
-    public String sayHello() {
-        return "Hello World";
+    public HelloResponse sayHello() {
+        return new HelloResponse("Hello Pufferfishes!!!");
     }
 
-    @GetMapping("/two")
-    public String two() {
-        return "two";
-    }
-
-    @DeleteMapping("/{id}")
-    public String delete(@PathVariable String id) {
-        return "delete";
-    }
 }

@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
@@ -7,13 +7,21 @@ import Hello from "./Hello.tsx";
 
 function App() {
     const [count, setCount] = useState(0)
-    const [loading, setLoading] = useState(true);
-    const a = 3;
-    const b = 4;
-    console.log(loading, setLoading)
+    const [data, setData] = useState("");
+    console.log(data);
+    useEffect(() => {
+        async function fetchHello() {
+            const response = await fetch("/api/hello");
+            const data = await response.json();
+            setData(data.message);
+        }
+
+        fetchHello();
+
+    }, [])
     return (
         <>
-            <Hello/>
+            <h1>{data}</h1>
             <section id="center">
                 <div className="hero">
                     <img src={heroImg} className="base" width="170" height="179" alt=""/>
